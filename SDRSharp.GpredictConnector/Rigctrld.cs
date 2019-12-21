@@ -1,11 +1,20 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Threading;
+using SDRSharp.Common;
 
 namespace SDRSharp.GpredictConnector
 {
     class Rigctrld
     {
+        private ISharpControl control_;
+        private Controlpanel _controlpanel;
+
+        public Rigctrld(ISharpControl control, Controlpanel panel)
+        {
+            control_ = control;
+            _controlpanel = panel;
+        }
         public string ExecCommand(string command)
         {
             command = command.Replace("\n", String.Empty); // remove line feed from command
@@ -27,7 +36,10 @@ namespace SDRSharp.GpredictConnector
             }
             else if (command.Equals("f"))
             {
-                return FrequencyInHzString + "\n"; //return current freq.
+                if (_controlpanel.checkBoxFreeTune.Checked)
+                    return control_.Frequency + "\n";
+                else
+                    return FrequencyInHzString + "\n"; //return current freq.
             }
             return GenerateReturn(HamlibErrorcode.RIG_ENIMPL); //recieved unsupported command
         }

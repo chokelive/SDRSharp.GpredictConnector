@@ -34,6 +34,7 @@
             this.labelDescserverStat = new System.Windows.Forms.Label();
             this.labelDescLastFrq = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.LinkLabel();
+            this.checkBoxFreeTune = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // checkBoxEnable
@@ -92,10 +93,21 @@
             this.labelVersion.TabStop = true;
             this.labelVersion.Text = "v0.0";
             // 
+            // checkBoxFreeTune
+            // 
+            this.checkBoxFreeTune.AutoSize = true;
+            this.checkBoxFreeTune.Location = new System.Drawing.Point(4, 53);
+            this.checkBoxFreeTune.Name = "checkBoxFreeTune";
+            this.checkBoxFreeTune.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxFreeTune.TabIndex = 9;
+            this.checkBoxFreeTune.Text = "free tuning";
+            this.checkBoxFreeTune.UseVisualStyleBackColor = true;
+            // 
             // Controlpanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.checkBoxFreeTune);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.labelDescLastFrq);
             this.Controls.Add(this.labelDescserverStat);
@@ -104,7 +116,7 @@
             this.Controls.Add(this.checkBoxEnable);
             this.MinimumSize = new System.Drawing.Size(185, 55);
             this.Name = "Controlpanel";
-            this.Size = new System.Drawing.Size(185, 55);
+            this.Size = new System.Drawing.Size(185, 101);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +129,6 @@
         public System.Windows.Forms.CheckBox checkBoxEnable;
         public System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.LinkLabel labelVersion;
+        public System.Windows.Forms.CheckBox checkBoxFreeTune;
     }
 }

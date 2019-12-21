@@ -112,6 +112,5 @@ namespace SDRSharp.GpredictConnector
         public event Action ServerStop;
         public event Action ServerStart;
 
-        
     }
 }

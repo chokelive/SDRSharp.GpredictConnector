@@ -42,7 +42,7 @@ namespace SDRSharp.GpredictConnector
 
             //Instanciate all needed objects
             _controlpanel = new Controlpanel();          
-            Rigctrld rigctrl = new Rigctrld();
+            Rigctrld rigctrl = new Rigctrld(control, _controlpanel);
             TcpServer tcpServer = new TcpServer(rigctrl);
             tcpServer_ = tcpServer;
             //Link the objects together
